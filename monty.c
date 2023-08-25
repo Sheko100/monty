@@ -12,13 +12,11 @@
 
 int main(int ac, char **av)
 {
-	int readbytes, fd, i = 1, l = 0, n = 0, offset, linescount = 0;
+	int readbytes, fd, i = 1, n = 0, offset, linescount = 0;
 	char buf[BUFSIZE];
-	char *bufp;
 
 	if (ac <= 1)
 		errusage();
-
 	while (av[i])
 	{
 		fd = open(av[i], O_RDONLY);
@@ -27,7 +25,6 @@ int main(int ac, char **av)
 			fprintf(stderr, "Error: Can't open file %s\n", av[i]);
 			exit(EXIT_FAILURE);
 		}
-
 		while ((readbytes = read(fd, buf, BUFSIZE)) > 0)
 		{
 			offset = 0;

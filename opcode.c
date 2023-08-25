@@ -37,7 +37,7 @@ void push(stack_t **stack, unsigned int num)
  *
  * Return: void
  */
-void pall(stack_t **stack, unsigned int linenum)
+void pall(stack_t **stack, __attribute__ ((unused))unsigned int linenum)
 {
 	stack_t *frame;
 
