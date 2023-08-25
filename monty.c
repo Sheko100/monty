@@ -152,6 +152,11 @@ void execopcode(char *opname, char *arg, int linenum)
 		opcode->f = pint;
 		opcode->f(&stack_f, linenum);
 	}
+	else if (issame("nop", opcode->opcode))
+	{
+		opcode->f = nop;
+		opcode->f(&stack_f, linenum);
+	}
 	else
 		erropcode(opcode, linenum);
 }

@@ -45,6 +45,7 @@ int isnum(char *num);
 void push(stack_t **stack, unsigned int num);
 void pall(stack_t **stack, unsigned int linenum);
 void pint(stack_t **stack, unsigned int linenum);
+void nop(stack_t **stack, unsigned int linenum);
 void errusage(void);
 void errmalloc(void);
 void erropcode(instruction_t *opcode, int linenum);
