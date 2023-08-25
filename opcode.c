@@ -76,7 +76,7 @@ void pint(stack_t **stack, unsigned int linenum)
  *
  * Return: void
  */
-void nop(__attribute__ ((unused))stack_t **stack, __attribute__ ((unused))unsigned int linenum);
+void nop(__attribute__ ((unused))stack_t **stack, __attribute__ ((unused))unsigned int linenum)
 {
 
 }
