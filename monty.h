@@ -46,6 +46,7 @@ void execopcode(char *opname, char *arg, int linenum);
 int issame(char *s1, char *s2);
 int isnum(char *num);
 stack_t *makeframe(void);
+void freestack(void);
 void push(stack_t **stack, unsigned int num);
 void pall(stack_t **stack, unsigned int linenum);
 void pint(stack_t **stack, unsigned int linenum);

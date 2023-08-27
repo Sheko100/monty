@@ -32,6 +32,7 @@ int main(int ac, char **av)
 		linescount += interpret(buf, linescount, readbytes);
 	}
 	close(fd);
+	freestack();
 	return (0);
 }
 
