@@ -29,10 +29,9 @@ void errmalloc(void)
  *
  * Return: void
  */
-void erropcode(instruction_t *opcode, int linenum)
+void erropcode(char *opcode, int linenum)
 {
-	fprintf(stderr, "L%d: unknown instruction %s\n", linenum, opcode->opcode);
-	free(opcode);
+	fprintf(stderr, "L%d: unknown instruction %s\n", linenum, opcode);
 	exit(EXIT_FAILURE);
 }
 

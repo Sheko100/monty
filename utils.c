@@ -13,7 +13,7 @@ int issame(char *s1, char *s2)
 {
 	int i = 0;
 
-	while (s1[i] && *s2)
+	while (s1[i] || *s2)
 	{
 		if (s1[i] != *s2)
 			return (0);
@@ -37,6 +37,8 @@ int isnum(char *num)
 
 	if (num != NULL)
 	{
+		if (num[i] == '-')
+			i++;
 		while (num[i])
 		{
 			if (num[i] < 48 || num[i] > 57)

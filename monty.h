@@ -38,17 +38,21 @@ typedef struct instruction_s
 
 extern stack_t *stack_f;
 
+int backtoline(int fd, char *buf, int readbytes);
 int interpret(char *buf, int linescount, int size);
+int getlinescount(char *buf);
+int stripword(char **word, char **buf);
 void execopcode(char *opname, char *arg, int linenum);
 int issame(char *s1, char *s2);
 int isnum(char *num);
+stack_t *makeframe(void);
 void push(stack_t **stack, unsigned int num);
 void pall(stack_t **stack, unsigned int linenum);
 void pint(stack_t **stack, unsigned int linenum);
 void nop(stack_t **stack, unsigned int linenum);
 void errusage(void);
 void errmalloc(void);
-void erropcode(instruction_t *opcode, int linenum);
+void erropcode(char *opcode, int linenum);
 void errpush(int linenum);
 
 #endif

@@ -73,10 +73,13 @@ void pint(stack_t **stack, unsigned int linenum)
 
 /**
  * nop - does nothing
+ * @stack: pointer to the top of the stack
+ * @linenum: the number of line
  *
  * Return: void
  */
-void nop(__attribute__ ((unused))stack_t **stack, __attribute__ ((unused))unsigned int linenum)
+void nop(__attribute__ ((unused))stack_t **stack,
+		__attribute__ ((unused))unsigned int linenum)
 {
 
 }
