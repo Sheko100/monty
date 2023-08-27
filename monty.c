@@ -12,8 +12,8 @@
 
 int main(int ac, char **av)
 {
-	int readbytes, fd, n = 0, linescount = 0;
-	char buf[BUFSIZE] = {};
+	int readbytes, fd, linescount = 0;
+	char buf[BUFSIZE] = {'\0'};
 
 	if (ac != 2)
 		errusage();
