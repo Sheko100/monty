@@ -70,6 +70,36 @@ void pint(stack_t **stack, unsigned int linenum)
 		exit(EXIT_FAILURE);
 	}
 }
+/**
+ * pop - removes the top element of the stack
+ * @stack: pointer to the top of the stack
+ * @linenum: the number of line
+ *
+ * Return: void
+ */
+void pop(stack_t **stack, unsigned int linenum)
+{
+	stack_t *frame = NULL, *nextframe = NULL;
+
+	frame = *stack;
+	if (frame != NULL)
+	{
+		nextframe = frame->next;
+		free(frame);
+		if (nextframe != NULL)
+		{
+			nextframe->prev = NULL;
+			*stack = nextframe;
+		}
+		else
+			*stack = NULL;
+	}
+	else
+	{
+		fprintf(stderr, "L%d: can't pop an empty stack\n", linenum);
+		exit(EXIT_FAILURE);
+	}
+}
 
 /**
  * nop - does nothing
