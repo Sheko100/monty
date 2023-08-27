@@ -11,10 +11,10 @@
 int interpret(char *buf, int linescount, int size)
 {
 	char *opcode, *arg;
-	int isend, linenum = 1;
+	int isend, linenum = linescount + 1;
 
 	buf[size] = '\0';
-	linescount = getlinescount(buf);
+	linescount += getlinescount(buf);
 
 	while (linenum <= linescount)
 	{
@@ -31,8 +31,12 @@ int interpret(char *buf, int linescount, int size)
 				else if (arg == NULL)
 					isend = stripword(&arg, &buf);
 
+
+
 				if (isend)
+				{
 					break;
+				}
 			}
 			buf++;
 		}

@@ -29,7 +29,7 @@ int main(int ac, char **av)
 		if (buf[readbytes] != '\n')
 			readbytes = backtoline(fd, buf, readbytes);
 
-		linescount += interpret(buf, linescount, readbytes);
+		linescount = interpret(buf, linescount, readbytes);
 	}
 	close(fd);
 	freestack();
